@@ -25,9 +25,9 @@ Use an event-driven approach to kick off hybrid join process
    
 3. Configure Event log collection
 
-   a. Configure Group policy for event source conmputers:
+   a. Configure Group policy for event source computers (Domain Controllers) to subscribe to collector (ADConnect):
    
-         Computer Configuration / Administrative Templates / Windows Conmponents / Configure target subscription Manager/ Enabled: "Server=http://<Server_FQDN>:5985/wsman/Subscription/WEC,Refresh=10"
+         Computer Configuration / Administrative Templates / Windows Conmponents / Configure target subscription Manager/ Enabled: "Server=http://<ADConnect_Server_FQDN>:5985/wsman/Subscription/WEC,Refresh=10"
    
    b. Configure Winrm on sources:
 
@@ -49,11 +49,11 @@ Use an event-driven approach to kick off hybrid join process
        netsh http delete urlacl url=https://+:5986/wsman/
        netsh http add urlacl url=https://+:5986/wsman/ sddl=D:(A;;GX;;;S-1-5-80-569256582-2953403351-2909559716-1301513147-412116970)(A;;GX;;;S-1-5-80-4059739203-877974739-1245631912-527174227-2996563517)
    
-4. Add a subscription on the ADConnect server:
+4. Add Event log subscription on the ADConnect server:
 
           wecutil cs subscription.xml
 
-5. Add task on the ADConnect Box to run a delta sycn when the event is received:
+5. Add task on the ADConnect Box to run a delta sync when the event is received:
    
           schtasks /xml ScheduledTask.xml /TN "cheetohVT/Start AD Sync Cycle"
 
