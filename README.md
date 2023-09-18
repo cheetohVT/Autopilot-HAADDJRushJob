@@ -42,7 +42,7 @@ Use an event-driven approach to kick off hybrid join process
        winrm qc -q
        wecutil qc /q
    
-   d. Configure WinRM permsission ont he collector (2016+):
+   d. Configure WinRM permsission on the ADConnect (2016+):
    
        netsh http delete urlacl url=http://+:5985/wsman/
        netsh http add urlacl url=http://+:5985/wsman/ sddl=D:(A;;GX;;;S-1-5-80-569256582-2953403351-2909559716-1301513147-412116970)(A;;GX;;;S-1-5-80-4059739203-877974739-1245631912-527174227-2996563517)
@@ -60,9 +60,9 @@ Use an event-driven approach to kick off hybrid join process
 
 Additional thoughts
 
-If the ADConnect server is in a different site than where the userCertificate change occurred, enable change notify for the IP Site connect between the AD Sites.
+If the ADConnect server is in a different site than where the userCertificate change occurred, enable change notify for the site connector between the AD Sites.
 
-This solution results in quick Hybrid-joined Computer object creation in AAD, saving time during AUtopilot deployments.
+This solution results in quick Hybrid-joined Computer object creation in AAD, saving time during Autopilot deployments.
 
 
 
