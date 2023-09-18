@@ -27,7 +27,7 @@ Use an event-driven approach to kick off hybrid join process
 
    a. Configure Group policy for event source computers (Domain Controllers) to subscribe to collector (ADConnect):
    
-         Computer Configuration / Administrative Templates / Windows Conmponents / Configure target subscription Manager/ Enabled: "Server=http://<ADConnect_Server_FQDN>:5985/wsman/Subscription/WEC,Refresh=10"
+         Computer Configuration / Administrative Templates / Windows Conmponents / Configure target subscription Manager/ Enabled: "Server=http://<ADConnect_Server_FQDN>:5985/wsman/SubscriptionManager/WEC,Refresh=10"
    
    b. Configure Winrm on sources:
 
