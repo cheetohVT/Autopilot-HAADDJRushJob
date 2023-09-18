@@ -55,7 +55,7 @@ Use an event-driven approach to kick off hybrid join process
 
 5. Add task on the ADConnect Box to run a delta sync when the event is received:
    
-          schtasks /xml ScheduledTask.xml /TN "cheetohVT/Start AD Sync Cycle"
+          schtasks /create /xml ScheduledTask.xml /TN "cheetohVT/Start AD Sync Cycle"
 
 
 Additional thoughts
