@@ -1,5 +1,5 @@
 # Autopilot-HAADDJRushJob
-Solution to aid in faster Autopilot Hybrid Join
+Solution to aid in faster Autopilot Hybrid Join, by driving computer object creation in AAD as a result of domain controller audit events.
 
 .Synopsis
 
@@ -56,3 +56,13 @@ Use an event-driven approach to kick off hybrid join process
 5. Add task on the ADConnect Box to run a delta sycn when the event is received:
    
           schtasks /xml ScheduledTask.xml /TN "cheetohVT/Start AD Sync Cycle"
+
+
+Additional thoughts
+
+If the ADConnect server is in a different site than where the userCertificate change occurred, enable change notify for the IP Site connect between the AD Sites.
+
+This solution results in quick Hybrid-joined Computer object creation in AAD, saving time during AUtopilot deployments.
+
+
+
