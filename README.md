@@ -9,7 +9,7 @@ Use an event-driven approach to kick off hybrid join process
 
 1. Use auditing to generate a security event when the 'userCertificate' property of a computer account is added.
 2. Use an source-initiated event log subscription to distribute events to the ADConnect server
-3. Consume the auditing events to drive an ADConnect Sync cycles.
+3. Consume auditing events to drive ADConnect Sync cycles.
 
 .Operations
 
